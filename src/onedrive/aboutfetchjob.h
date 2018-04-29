@@ -84,11 +84,12 @@ class KGAPIONEDRIVE_EXPORT AboutFetchJob : public KGAPI2::FetchJob
      *
      * The @p account must be authenticated with one of the following scopes:
      * <ul>
-     * <li>https://www.googleapis.com/auth/drive.readonly.metadata</li>
-     * <li>https://www.googleapis.com/auth/drive.readonly</li>
-     * <li>https://www.googleapis.com/auth/drive</li>
-     * <li>https://www.googleapis.com/auth/drive.file</li>
-     * <li>https://www.googleapis.com/auth/drive.metadata.readonly</li>
+     * <li>files.read</li>
+     * <li>files.read.all</li>
+     * <li>files.readwrite</li>
+     * <li>files.readwrite.all</li>
+     * <li>sites.read.all</li>
+     * <li>sites.readwrite.all</li>
      * </ul>
      *
      * @param account Account to authenticate the request with

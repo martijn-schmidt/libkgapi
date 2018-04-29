@@ -505,7 +505,7 @@ class KGAPIONEDRIVE_EXPORT File: public KGAPI2::Object
     QString originalFileName() const;
 
     /**
-     * @bried Returns the number of quota bytes used by this file.
+     * @brief Returns the number of quota bytes used by this file.
      */
     qlonglong quotaBytesUsed() const;
 

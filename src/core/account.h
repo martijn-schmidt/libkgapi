@@ -34,19 +34,19 @@ namespace KGAPI2
 
 /**
  * @headerfile Account
- * @brief A Google account
+ * @brief A Google or Microsoft account
  *
- * This class represents a single Google account. The account is uniquely
- * identified by Account::accountName (which is actually the user's GMail address).
+ * This class represents a single Google or Microsoft account. The account is uniquely
+ * identified by Account::accountName (which is actually the user's e-mail address).
  *
- * The class stores an access token, refresh token (to retrieve a new access token
- * when the old one expires) and list of scopes (APIs that current access token
+ * The class stores an access token, a refresh token (to retrieve a new access token
+ * when the old one expires) and a list of scopes (APIs that the current access token
  * can be used to access).
  *
  * Unlike in previous versions, account management is not handled by LibKGAPI
  * anymore and it's up to programmer to store the account in a persistent storage.
  *
- * To obtain a new account, use AuthJob.
+ * To obtain a new account, use KAccounts or AuthJob (Google only).
  *
  * @author Daniel Vrátil <dvratil@redhat.com>
  * @since 0.1
@@ -63,7 +63,7 @@ class KGAPICORE_EXPORT Account
     /**
      * @brief Constructs a new valid account
      *
-     * @param account Google account name (usually user.name@gmail.com)
+     * @param account Google or Microsoft account name (usually user.name@gmail.com)
      * @param accessToken Access token to \p scopes for \p account
      * @param refreshToken Refresh token
      * @param scopes List of scopes
@@ -127,9 +127,9 @@ class KGAPICORE_EXPORT Account
      * \brief Sets new scopes.
      *
      * @note Note that changing scopes requires makes current tokens invalid.
-     * This means that when this Account is used next time, AuthJob will be
-     * automatically started and user will be prompted with a dialog to grant
-     * access to all scopes.
+     * This means that when this Account is used next time, KAccounts or AuthJob
+     * will be started automatically and the user will be prompted with a dialog
+     * to grant access to all scopes.
      * 
      * @param scopes
      */
@@ -206,13 +206,14 @@ private:
      * @internal
      * Whether scopes were changed or not.
      *
-     * AuthJob reads this attribute when Account is passed to it to
+     * KAccounts or AuthJob reads this attribute when Account is passed to it to
      * determine whether completely new process of authentication is needed,
      * or whether just refreshing tokens is enough.
      *
-     * When m_scopesChanged is \p true and AuthJob successffulyperforms full
-     * re-authentication it sets this attribute to \p false and next time it
-     * will just refresh existing tokens until the scopes are changed again.
+     * When m_scopesChanged is \p true and KAccounts or AuthJob successfully
+     * performs full re-authentication it sets this attribute to \p false and
+     * next time it will just refresh existing tokens until the scopes are
+     * changed again.
      */
     bool m_scopesChanged; //krazy:exclude=dpointer
 

@@ -35,9 +35,9 @@ namespace KGAPI2
 /**
  * @brief Base class for all objects
  *
- * There are many container classes to represent data fetched from Google servers,
- * like KGAPI2::Contact, KGAPI2::Event, etc. All these container classes must
- * be subclasses of the KGAPI2::Object.
+ * There are many container classes to represent data fetched from Google's or
+ * Microsoft's servers, like KGAPI2::Contact, KGAPI2::Event, etc. All these
+ * container classes must be subclasses of the KGAPI2::Object.
  *
  * @author Daniel Vrátil <dvratil@redhat.com>
  * @since 2.0
@@ -73,7 +73,7 @@ class KGAPICORE_EXPORT Object
     void setEtag(const QString &etag);
 
     /**
-     * @brief Returns etag of this object.
+     * @brief Returns the etag of this object.
      *
      * @return Etag string
      */

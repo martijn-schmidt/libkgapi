@@ -30,7 +30,7 @@ namespace KGAPI2 {
 
 /**
  * @headerfile DeleteJob
- * @brief Abstract superclass for all jobs that delete resources from Google
+ * @brief Abstract superclass for all jobs that delete resources from Google or Microsoft
  *
  * @author Daniel Vrátil <dvratil@redhat.com>
  * @since 2.0

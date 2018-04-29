@@ -241,14 +241,14 @@ public:
 
     /**
      * @brief returns the total number of quota bytes used by all Microsoft apps
-     *        (OneDrive, Picasa, etc.).
+     *        (OneDrive, etc.).
      * @since 5.3.2
      */
     qlonglong quotaBytesUsedAggregate() const;
 
     /**
      * @brief returns the total number of quota bytes used by all Microsoft apps
-     *        (OneDrive, Picasa, etc.).
+     *        (OneDrive, etc.).
      * @deprecated since 5.3.2, use quotaBytesUsedAggregate() instead.
      */
 #ifndef KGAPIONEDRIVE_NO_DEPRECATED

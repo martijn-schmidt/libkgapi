@@ -30,7 +30,7 @@ namespace KGAPI2 {
 
 /**
  * @headerfile FetchJob
- * @brief Abstract superclass for all jobs that fetch resources from Google
+ * @brief Abstract superclass for all jobs that fetch resources from Google or Microsoft
  *
  * @author Daniel Vrátil <dvratil@redhat.com>
  * @since 2.0
@@ -110,7 +110,7 @@ class KGAPICORE_EXPORT FetchJob : public KGAPI2::Job
      * usually requires reimplementing FetchJob::items as well and storing the
      * parsed items in your implementation.
      *
-     * @param reply A QNetworkReply received from Google server
+     * @param reply A QNetworkReply received from Google's or Microsoft's server
      * @param rawData Content of body of the @p reply. Don't use
      *        QNetworkReply::readAll(), because the content has already been read
      *        by Job implementation and thus it would return empty data.

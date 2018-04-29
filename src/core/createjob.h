@@ -106,7 +106,7 @@ class KGAPICORE_EXPORT CreateJob: public KGAPI2::Job
      * usually requires reimplementing FetchJob::items as well and storing the
      * parsed items in your implementation.
      *
-     * @param reply A QNetworkReply received from Google's server
+     * @param reply A QNetworkReply received from Google's or Microsoft's server
      * @param rawData Content of body of the @p reply. Don't use
      *        QNetworkReply::readAll(), because the content has already been read
      *        by Job implementation and thus it would return empty data.

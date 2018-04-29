@@ -57,10 +57,10 @@ class KGAPICORE_EXPORT Job : public QObject
     /**
      * @brief Maximum interval between requests.
      *
-     * Some Google APIs have a quota on maximum amount of requests per account
-     * per second. When this quota is exceeded, the Job will automatically increase
-     * the interval between dispatching requests, wait for a while and then try
-     * again. If however the interval is increased over @p maxTimeout, the job
+     * Some Google and Microsoft APIs have a quota on maximum amount of requests per
+     * account per second. When this quota is exceeded, the Job will automatically
+     * increase the interval between dispatching requests, wait for a while and then
+     * try again. If however the interval is increased over @p maxTimeout, the job
      * will fail and finish immediately. By default @p maxTimeout is @p -1, which
      * allows the interval to be increased indefinitely.
      *

@@ -222,13 +222,13 @@ enum Error {
     AuthError = 2,           ///< LibKGAPI error - authentication process failed.
     UnknownAccount = 3,      ///< LibKGAPI error - application requested unknown account.
     UnknownService = 4,      ///< LibKGAPI error - application requested unknown service.
-    InvalidResponse = 5,     ///< LibKGAPI error - Google returned invalid response.
+    InvalidResponse = 5,     ///< LibKGAPI error - Google or Microsoft returned invalid response.
     BackendNotReady = 6,     ///< @deprecated LibKGAPI error - backend is not ready (for example KWallet is not opened).
     InvalidAccount = 7,      ///< LibKGAPI error - the KGAPI2::Account object is invalid.
     NetworkError = 8,        ///< LibKGAPI error - standard network request returned a different code than 200.
     AuthCancelled = 9,       ///< LibKGAPI error - when the authentication dialog is canceled.
 
-    /* Following error codes identify Google errors */
+    /* Following error codes identify Google or Microsoft errors */
     OK = 200,                ///< Request successfully executed.
     Created = 201,           ///< Create request successfully executed.
     NoContent = 204,         ///< Tasks API returns 204 when task is successfully removed.
@@ -240,7 +240,7 @@ enum Error {
     NotFound = 404,          ///< Requested object was not found on the remote side.
     Conflict = 409,          ///< Object on the remote site differs from the submitted one. @see KGAPI2::Object::setEtag.
     Gone = 410,              ///< The requested data does not exist anymore on the remote site.
-    InternalError = 500,     ///< An unexpected error occurred on the Google service.
+    InternalError = 500,     ///< An unexpected error occurred on the Google or Microsoft service.
     QuotaExceeded = 503      ///< User quota has been exceeded, the request should be sent again later.
 };
 
