@@ -31,6 +31,9 @@ libraries:
  - qmake: PimGAPITasks
    cmake: "KPim::GAPITasks"
    cmakename: KPimGAPITasks
+ - qmake: PimGAPIOneDrive
+   cmake: "KPim::GAPIOneDrive"
+   cmakename: KPimGAPIOneDrive
 
 public_lib: true
 group: kdepim

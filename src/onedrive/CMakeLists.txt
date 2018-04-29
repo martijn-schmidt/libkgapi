@@ -124,7 +124,7 @@ install(FILES
 install(FILES
     ${kgapionedrive_HEADERS}
     "${CMAKE_CURRENT_BINARY_DIR}/kgapionedrive_export.h"
-    DESTINATION "${KDE_INSTALL_INCLUDEDIR}/KPim/KGAPI/kgapi/drive"
+    DESTINATION "${KDE_INSTALL_INCLUDEDIR}/KPim/KGAPI/kgapi/onedrive"
     COMPONENT Devel
 )
 

@@ -67,3 +67,5 @@ add_libkgapi2_test(tasks tasklistfetchjobtest)
 add_libkgapi2_test(tasks tasklistmodifyjobtest)
 
 add_libkgapi2_test(drive filesearchquerytest)
+
+add_libkgapi2_test(onedrive filesearchquerytest)

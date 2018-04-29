@@ -9,5 +9,7 @@ add_subdirectory(tasks)
 
 add_subdirectory(saslplugin)
 
+add_subdirectory(onedrive)
+
 install( FILES libkgapi.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
 

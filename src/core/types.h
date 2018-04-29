@@ -161,6 +161,47 @@ typedef QList<PostPtr> PostsList;
 
 }
 
+namespace OneDrive
+{
+
+class About;
+typedef QSharedPointer<About> AboutPtr;
+typedef QList<AboutPtr> AboutsList;
+
+class App;
+typedef QSharedPointer<App> AppPtr;
+typedef QList<AppPtr> AppsList;
+
+class Change;
+typedef QSharedPointer<Change> ChangePtr;
+typedef QList<ChangePtr> ChangesList;
+
+class ChildReference;
+typedef QSharedPointer<ChildReference> ChildReferencePtr;
+typedef QList<ChildReferencePtr> ChildReferencesList;
+
+class File;
+typedef QSharedPointer<File> FilePtr;
+typedef QList<FilePtr> FilesList;
+
+class ParentReference;
+typedef QSharedPointer<ParentReference> ParentReferencePtr;
+typedef QList<ParentReferencePtr> ParentReferencesList;
+
+class Permission;
+typedef QSharedPointer<Permission> PermissionPtr;
+typedef QList<PermissionPtr> PermissionsList;
+
+class Revision;
+typedef QSharedPointer<Revision> RevisionPtr;
+typedef QList<RevisionPtr> RevisionsList;
+
+class User;
+typedef QSharedPointer<User> UserPtr;
+typedef QList<UserPtr> UsersList;
+
+}
+
 template<class T>
 ObjectsList operator<<(ObjectsList &objectsList, const QList< QSharedPointer<T> > &list)
 {
