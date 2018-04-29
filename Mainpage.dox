@@ -2,8 +2,8 @@
 
 \section purpose Purpose
 
-LibKGAPI is a library that implements various Google APIs so that
-3rd party applications can easily integrate with Google services.
+LibKGAPI is a library that implements various Google and Microsoft APIs so that
+3rd party applications can easily integrate with Google and Microsoft services.
 
 \section desc Description
 
@@ -17,9 +17,13 @@ LibKGAPI currently supports the following Google APIs:
   <li>Drive API v2 (https://developers.google.com/drive/v2/reference)</li>
   <li>Blogger API v3 (https://developers.google.com/blogger/docs/3.0/reference/)</li>
 </ul>
-Deprecated APIs:
+Deprecated Google APIs:
 <ul>
   <li>Latitude API v1 (https://developers.google.com/latitude/v1/)</li>
+</ul>
+LibKGAPI currently supports the following Microsoft APIs:
+<ul>
+  <li>OneDrive Graph API v1.0 (https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/onedrive)</li>
 </ul>
 
 <h1>Examples</h1>

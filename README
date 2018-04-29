@@ -4,7 +4,7 @@ LibKGAPI
 LibKGAPI (previously called LibKGoogle) is a C++ library that implements APIs for
 various Google services.
 
-Currently supported APIs:
+Currently supported Google APIs:
   - Calendar API v3 (https://developers.google.com/google-apps/calendar)
   - Contacts API v3 (https://developers.google.com/google-apps/contacts/v3/)
   - Tasks API v1 (https://developers.google.com/google-apps/tasks)
@@ -14,6 +14,9 @@ Currently supported APIs:
 
 Deprecated APIs:
   - Latitude API v1 (https://developers.google.com/latitude/v1/)
+
+Currently supported Microsoft APIs:
+  - OneDrive Graph API v1.0 (https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/onedrive)
 
 Compiling:
 ----------
