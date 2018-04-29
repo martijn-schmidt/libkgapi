@@ -23,14 +23,14 @@
 
 #include "filecreatejob.h"
 #include "../debug.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "utils.h"
 
 #include <QNetworkRequest>
 #include <QNetworkAccessManager>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN FileCreateJob::Private
 {
@@ -102,11 +102,11 @@ QUrl FileCreateJob::createUrl(const QString &filePath,
                               const FilePtr &metaData)
 {
     if (filePath.isEmpty() && !metaData.isNull()) {
-        return DriveService::uploadMetadataFileUrl();
+        return OneDriveService::uploadMetadataFileUrl();
     } else if (metaData.isNull()) {
-        return DriveService::uploadMediaFileUrl();
+        return OneDriveService::uploadMediaFileUrl();
     } else {
-        return DriveService::uploadMultipartFileUrl();
+        return OneDriveService::uploadMultipartFileUrl();
     }
 }
 

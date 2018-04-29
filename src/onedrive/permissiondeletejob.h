@@ -21,21 +21,21 @@
  */
 
 
-#ifndef KGAPI2_DRIVEPERMISSIONDELETEJOB_H
-#define KGAPI2_DRIVEPERMISSIONDELETEJOB_H
+#ifndef KGAPI2_ONEDRIVEPERMISSIONDELETEJOB_H
+#define KGAPI2_ONEDRIVEPERMISSIONDELETEJOB_H
 
 #include "deletejob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QStringList>
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT PermissionDeleteJob :  KGAPI2::DeleteJob
+class KGAPIONEDRIVE_EXPORT PermissionDeleteJob :  KGAPI2::DeleteJob
 {
     Q_OBJECT
 
@@ -63,8 +63,8 @@ class KGAPIDRIVE_EXPORT PermissionDeleteJob :  KGAPI2::DeleteJob
     friend class Private;
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEPERMISSIONDELETEJOB_H
+#endif // KGAPI2_ONEDRIVEPERMISSIONDELETEJOB_H

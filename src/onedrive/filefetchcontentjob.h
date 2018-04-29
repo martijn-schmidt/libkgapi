@@ -21,18 +21,18 @@
  */
 
 
-#ifndef KGAPI2_DRIVE_FILEFETCHCONTENTJOB_H
-#define KGAPI2_DRIVE_FILEFETCHCONTENTJOB_H
+#ifndef KGAPI2_ONEDRIVE_FILEFETCHCONTENTJOB_H
+#define KGAPI2_ONEDRIVE_FILEFETCHCONTENTJOB_H
 
 #include "fetchjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 namespace KGAPI2
 {
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT FileFetchContentJob : public KGAPI2::FetchJob
+class KGAPIONEDRIVE_EXPORT FileFetchContentJob : public KGAPI2::FetchJob
 {
     Q_OBJECT
 
@@ -62,8 +62,8 @@ class KGAPIDRIVE_EXPORT FileFetchContentJob : public KGAPI2::FetchJob
     friend class Private;
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVE_FILEFETCHCONTENTJOB_H
+#endif // KGAPI2_ONEDRIVE_FILEFETCHCONTENTJOB_H

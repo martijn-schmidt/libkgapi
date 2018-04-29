@@ -20,19 +20,19 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVEFILECREATEJOB_H
-#define KGAPI2_DRIVEFILECREATEJOB_H
+#ifndef KGAPI2_ONEDRIVEFILECREATEJOB_H
+#define KGAPI2_ONEDRIVEFILECREATEJOB_H
 
 #include "fileabstractuploadjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT FileCreateJob : public KGAPI2::Drive::FileAbstractUploadJob
+class KGAPIONEDRIVE_EXPORT FileCreateJob : public KGAPI2::OneDrive::FileAbstractUploadJob
 {
     Q_OBJECT
 
@@ -67,8 +67,8 @@ class KGAPIDRIVE_EXPORT FileCreateJob : public KGAPI2::Drive::FileAbstractUpload
 
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEFILECREATEJOB_H
+#endif // KGAPI2_ONEDRIVEFILECREATEJOB_H

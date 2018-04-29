@@ -18,12 +18,12 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef LIBKGAPI2_DRIVE_ABOUT_H
-#define LIBKGAPI2_DRIVE_ABOUT_H
+#ifndef LIBKGAPI2_ONEDRIVE_ABOUT_H
+#define LIBKGAPI2_ONEDRIVE_ABOUT_H
 
 #include "types.h"
 #include "object.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QString>
 #include <QStringList>
@@ -33,26 +33,26 @@
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
 /**
- * @brief DriveAbout contains information about the current user along with
- *        Google Drive API settings.
+ * @brief OneDriveAbout contains information about the current user along with
+ *        Microsoft OneDrive API settings.
  *
- * Getters and setters' documentation is based on Google Drive's API v2 reference
+ * Getters and setters' documentation is based on Microsoft OneDrive's API v2 reference
  * @see <a href="https://developers.google.com/drive/v2/reference/about">About</a>
  *
  * @since 2.0
  * @author Andrius da Costa Ribas <andriusmao@gmail.com>
  * @author Daniel Vrátil <dvratil@redhat.com>
  */
-class KGAPIDRIVE_EXPORT About: public KGAPI2::Object
+class KGAPIONEDRIVE_EXPORT About: public KGAPI2::Object
 {
 
 public:
     /**
-     * @brief DriveAbout::Format holds the structure used for importFormats[]
+     * @brief OneDriveAbout::Format holds the structure used for importFormats[]
      *        and exportFormats[] properties.
      */
     class Format
@@ -84,7 +84,7 @@ public:
     typedef QList<FormatPtr> FormatsList;
 
     /**
-     * @brief DriveAbout::AdditionalRoleInfo holds the structure used for
+     * @brief OneDriveAbout::AdditionalRoleInfo holds the structure used for
      *        additionalRoleInfo[] property.
      */
     class AdditionalRoleInfo
@@ -92,7 +92,7 @@ public:
       public:
 
         /**
-         * @brief DriveAbout::AdditionalRoleInfo::Role holds the structure used for
+         * @brief OneDriveAbout::AdditionalRoleInfo::Role holds the structure used for
          *        additionalRoleInfo[].roleSets[] property.
          */
         class RoleSet
@@ -149,7 +149,7 @@ public:
     typedef QList<AdditionalRoleInfoPtr> AdditionalRoleInfosList;
 
     /**
-     * @brief DriveAbout::Feature holds the structure used for features[] property.
+     * @brief OneDriveAbout::Feature holds the structure used for features[] property.
      */
     class Feature
     {
@@ -180,7 +180,7 @@ public:
     typedef QList<FeaturePtr> FeaturesList;
 
     /**
-     * @brief DriveAbout::MaxUploadSize holds the structure used for maxUploadSizes[] property.
+     * @brief OneDriveAbout::MaxUploadSize holds the structure used for maxUploadSizes[] property.
      */
     class MaxUploadSize
     {
@@ -240,19 +240,19 @@ public:
     qlonglong quotaBytesUsedInTrash() const;
 
     /**
-     * @brief returns the total number of quota bytes used by all Google apps
-     *        (Drive, Picasa, etc.).
+     * @brief returns the total number of quota bytes used by all Microsoft apps
+     *        (OneDrive, Picasa, etc.).
      * @since 5.3.2
      */
     qlonglong quotaBytesUsedAggregate() const;
 
     /**
-     * @brief returns the total number of quota bytes used by all Google apps
-     *        (Drive, Picasa, etc.).
+     * @brief returns the total number of quota bytes used by all Microsoft apps
+     *        (OneDrive, Picasa, etc.).
      * @deprecated since 5.3.2, use quotaBytesUsedAggregate() instead.
      */
-#ifndef KGAPIDRIVE_NO_DEPRECATED
-    KGAPIDRIVE_DEPRECATED_EXPORT qlonglong quotaBytesUserAggregate() const;
+#ifndef KGAPIONEDRIVE_NO_DEPRECATED
+    KGAPIONEDRIVE_DEPRECATED_EXPORT qlonglong quotaBytesUserAggregate() const;
 #endif
 
     /**
@@ -320,7 +320,7 @@ public:
     UserPtr user() const;
 
     /**
-     * @brief Constructs a new DriveAbout object from given JSON data
+     * @brief Constructs a new OneDriveAbout object from given JSON data
      *
      * @param jsonData
      */
@@ -334,8 +334,8 @@ public:
     friend class Private;
 };
 
-} /* namespace Drive */
+} /* namespace OneDrive */
 
 } /* namespace KGAPI2 */
 
-#endif // LIBKGAPI2_DRIVE_ABOUT_H
+#endif // LIBKGAPI2_ONEDRIVE_ABOUT_H

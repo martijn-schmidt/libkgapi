@@ -18,12 +18,12 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef LIBKGAPI2_DRIVE_CHANGE_H
-#define LIBKGAPI2_DRIVE_CHANGE_H
+#ifndef LIBKGAPI2_ONEDRIVE_CHANGE_H
+#define LIBKGAPI2_ONEDRIVE_CHANGE_H
 
 #include "types.h"
 #include "object.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QString>
 #include <QUrl>
@@ -31,20 +31,20 @@
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
 /**
  * @brief Change contains the representation of a change to a file
  *
- * Getters and setters' documentation is based on Google Drive's API v2 reference
+ * Getters and setters' documentation is based on Microsoft OneDrive's API v2 reference
  * @see <a href="https://developers.google.com/drive/v2/reference/changes">Changes</a>
  *
  * @since 2.0
  * @author Andrius da Costa Ribas <andriusmao@gmail.com>
  * @author Daniel Vrátil <dvratil@redhat.com>
  */
-class KGAPIDRIVE_EXPORT Change: public KGAPI2::Object
+class KGAPIONEDRIVE_EXPORT Change: public KGAPI2::Object
 {
   public:
     explicit Change();
@@ -88,8 +88,8 @@ class KGAPIDRIVE_EXPORT Change: public KGAPI2::Object
     friend class File;
 };
 
-} /* namespace Drive */
+} /* namespace OneDrive */
 
 } /* namespace KGAPI2 */
 
-#endif // LIBKGAPI2_DRIVE_CHANGE_H
+#endif // LIBKGAPI2_ONEDRIVE_CHANGE_H

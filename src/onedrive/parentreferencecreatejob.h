@@ -20,21 +20,21 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVEPARENTREFERENCECREATEJOB_H
-#define KGAPI2_DRIVEPARENTREFERENCECREATEJOB_H
+#ifndef KGAPI2_ONEDRIVEPARENTREFERENCECREATEJOB_H
+#define KGAPI2_ONEDRIVEPARENTREFERENCECREATEJOB_H
 
 #include "createjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QStringList>
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT ParentReferenceCreateJob : public KGAPI2::CreateJob
+class KGAPIONEDRIVE_EXPORT ParentReferenceCreateJob : public KGAPI2::CreateJob
 {
     Q_OBJECT
 
@@ -69,8 +69,8 @@ class KGAPIDRIVE_EXPORT ParentReferenceCreateJob : public KGAPI2::CreateJob
 
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEPARENTREFERENCECREATEJOB_H
+#endif // KGAPI2_ONEDRIVEPARENTREFERENCECREATEJOB_H

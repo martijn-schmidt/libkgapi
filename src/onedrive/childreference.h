@@ -18,12 +18,12 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef LIBKGAPI2_DRIVE_CHILDREFERENCE_H
-#define LIBKGAPI2_DRIVE_CHILDREFERENCE_H
+#ifndef LIBKGAPI2_ONEDRIVE_CHILDREFERENCE_H
+#define LIBKGAPI2_ONEDRIVE_CHILDREFERENCE_H
 
 #include "types.h"
 #include "object.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QString>
 #include <QUrl>
@@ -31,20 +31,20 @@
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
 /**
  * @brief ChildReference contains a reference to a folder's child.
  *
- * Getters and setters' documentation is based on Google Drive's API v2 reference
+ * Getters and setters' documentation is based on Microsoft OneDrive's API v2 reference
  * @see <a href="https://developers.google.com/drive/v2/reference/children">Children</a>
  *
  * @since 2.0
  * @author Andrius da Costa Ribas <andriusmao@gmail.com>
  * @author Daniel Vrátil <dvratil@redhat.com>
  */
-class KGAPIDRIVE_EXPORT ChildReference: public KGAPI2::Object
+class KGAPIONEDRIVE_EXPORT ChildReference: public KGAPI2::Object
 {
 
   public:
@@ -78,8 +78,8 @@ class KGAPIDRIVE_EXPORT ChildReference: public KGAPI2::Object
     friend class Private;
 };
 
-} /* namespace Drive */
+} /* namespace OneDrive */
 
 } /* namespace KGAPI2 */
 
-#endif // LIBKGAPI2_DRIVE_CHILDREFERENCE_H
+#endif // LIBKGAPI2_ONEDRIVE_CHILDREFERENCE_H

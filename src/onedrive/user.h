@@ -19,11 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef KGAPI2_DRIVEUSER_H
-#define KGAPI2_DRIVEUSER_H
+#ifndef KGAPI2_ONEDRIVEUSER_H
+#define KGAPI2_ONEDRIVEUSER_H
 
 #include "types.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QString>
 #include <QUrl>
@@ -32,13 +32,13 @@
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
 /**
  * @brief The authenticated user.
  */
-class KGAPIDRIVE_EXPORT User
+class KGAPIONEDRIVE_EXPORT User
 {
   public:
     explicit User(const User &other);
@@ -75,8 +75,8 @@ class KGAPIDRIVE_EXPORT User
     friend class Private;
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEUSER_H
+#endif // KGAPI2_ONEDRIVEUSER_H

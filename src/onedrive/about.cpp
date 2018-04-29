@@ -24,9 +24,9 @@
 #include <QJsonDocument>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
-///// DriveAbout::Format
+///// OneDriveAbout::Format
 
 class Q_DECL_HIDDEN About::Format::Private
 {
@@ -73,7 +73,7 @@ QStringList About::Format::targets() const
     return d->targets;
 }
 
-///// DriveAbout::AdditionalRoleInfo::RoleSet
+///// OneDriveAbout::AdditionalRoleInfo::RoleSet
 
 class Q_DECL_HIDDEN About::AdditionalRoleInfo::RoleSet::Private
 {
@@ -120,7 +120,7 @@ QStringList About::AdditionalRoleInfo::RoleSet::additionalRoles() const
     return d->additionalRoles;
 }
 
-///// DriveAbout::AdditionalRoleInfo
+///// OneDriveAbout::AdditionalRoleInfo
 
 class Q_DECL_HIDDEN About::AdditionalRoleInfo::Private
 {
@@ -167,7 +167,7 @@ About::AdditionalRoleInfo::RoleSetsList About::AdditionalRoleInfo::roleSets() co
     return d->roleSets;
 }
 
-///// DriveAbout::Feature
+///// OneDriveAbout::Feature
 
 class Q_DECL_HIDDEN About::Feature::Private
 {
@@ -215,7 +215,7 @@ qreal About::Feature::featureRate() const
     return d->featureRate;
 }
 
-///// DriveAbout::MaxUploadSize
+///// OneDriveAbout::MaxUploadSize
 
 class Q_DECL_HIDDEN About::MaxUploadSize::Private
 {
@@ -262,7 +262,7 @@ qlonglong About::MaxUploadSize::size() const
     return d->size;
 }
 
-///// DriveAbout
+///// OneDriveAbout
 
 class Q_DECL_HIDDEN About::Private
 {
@@ -370,7 +370,7 @@ qlonglong About::quotaBytesUsedAggregate() const
     return d->quotaBytesUsedAggregate;
 }
 
-#ifndef KGAPIDRIVE_NO_DEPRECATED
+#ifndef KGAPIONEDRIVE_NO_DEPRECATED
 qlonglong About::quotaBytesUserAggregate() const
 {
     return quotaBytesUsedAggregate();

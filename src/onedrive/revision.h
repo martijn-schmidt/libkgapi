@@ -18,12 +18,12 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef LIBKGAPI2_DRIVEREVISION_H
-#define LIBKGAPI2_DRIVEREVISION_H
+#ifndef LIBKGAPI2_ONEDRIVEREVISION_H
+#define LIBKGAPI2_ONEDRIVEREVISION_H
 
 #include "types.h"
 #include "object.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QString>
 #include <QUrl>
@@ -33,20 +33,20 @@
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
 /**
  * @brief Revision contains a revision of a file.
  *
- * Getters and setters' documentation is based on Google Drive's API v2 reference
+ * Getters and setters' documentation is based on Microsoft OneDrive's API v2 reference
  * @see <a href="https://developers.google.com/drive/v2/reference/revisions">Revisions</a>
  *
  * @since 2.0
  * @author Andrius da Costa Ribas <andriusmao@gmail.com>
  * @author Daniel Vrátil <dvratil@redhat.com>
  */
-class KGAPIDRIVE_EXPORT Revision: public KGAPI2::Object
+class KGAPIONEDRIVE_EXPORT Revision: public KGAPI2::Object
 {
 
   public:
@@ -78,10 +78,10 @@ class KGAPIDRIVE_EXPORT Revision: public KGAPI2::Object
      * @brief Returns whether this revision is pinned to prevent automatic purging.
      *
      * This will only be populated and can only be modified on files with content
-     * stored in Drive which are not Google Docs.
+     * stored in OneDrive which are not Microsoft Office.
      *
      * Revisions can also be pinned when they are created through the
-     * drive.files.insert/update/copy by using the pinned query parameter.
+     * onedrive.files.insert/update/copy by using the pinned query parameter.
      */
     bool pinned() const;
 
@@ -89,10 +89,10 @@ class KGAPIDRIVE_EXPORT Revision: public KGAPI2::Object
      * @brief Sets whether this revision is pinned to prevent automatic purging.
      *
      * This will only be populated and can only be modified on files with content
-     * stored in Drive which are not Google Docs.
+     * stored in OneDrive which are not Microsoft Office.
      *
      * Revisions can also be pinned when they are created through the
-     * drive.files.insert/update/copy by using the pinned query parameter.
+     * onedrive.files.insert/update/copy by using the pinned query parameter.
      *
      * @param pinned
      */
@@ -101,7 +101,7 @@ class KGAPIDRIVE_EXPORT Revision: public KGAPI2::Object
     /**
      * @brief Returns whether this revision is published.
      *
-     * This is only populated and can only be modified for Google Docs.
+     * This is only populated and can only be modified for Microsoft Office.
      */
     bool published() const;
 
@@ -120,14 +120,14 @@ class KGAPIDRIVE_EXPORT Revision: public KGAPI2::Object
     /**
      * @brief Returns whether subsequent revisions will be automatically republished.
      *
-     * This is only populated and can only be modified for Google Docs.
+     * This is only populated and can only be modified for Microsoft Office.
      */
     bool publishAuto() const;
 
     /**
      * @brief Sets whether subsequent revisions will be automatically republished.
      *
-     * This is only populated and can only be modified for Google Docs.
+     * This is only populated and can only be modified for Microsoft Office.
      *
      * @param publishedAuto
      */
@@ -136,14 +136,14 @@ class KGAPIDRIVE_EXPORT Revision: public KGAPI2::Object
     /**
      * @brief Returns whether this revision is published outside the domain.
      *
-     * This is only populated and can only be modified for Google Docs.
+     * This is only populated and can only be modified for Microsoft Office.
      */
     bool publishedOutsideDomain() const;
 
     /**
      * @brief Sets whether this revision is published outside the domain.
      *
-     * This is only populated and can only be modified for Google Docs.
+     * This is only populated and can only be modified for Microsoft Office.
      *
      * @param publishedOutsideDomain
      */
@@ -152,12 +152,12 @@ class KGAPIDRIVE_EXPORT Revision: public KGAPI2::Object
     /**
      * @brief Returns a short term download URL for the file.
      *
-     * This will only be populated on files with content stored in Drive.
+     * This will only be populated on files with content stored in OneDrive.
      */
     QUrl downloadUrl() const;
 
     /**
-     * @brief Returns the links for exporting Google Docs to specific formats.
+     * @brief Returns the links for exporting Microsoft Office to specific formats.
      *
      * This is a map from the export format to URL.
      */
@@ -176,21 +176,21 @@ class KGAPIDRIVE_EXPORT Revision: public KGAPI2::Object
     /**
      * @brief Returns the original filename when this revision was created.
      *
-     * This will only be populated on files with content stored in Drive.
+     * This will only be populated on files with content stored in OneDrive.
      */
     QString originalFilename() const;
 
     /**
      * @brief Returns an MD5 checksum for the content of this revision.
      *
-     * This will only be populated on files with content stored in Drive
+     * This will only be populated on files with content stored in OneDrive
      */
     QString md5Checksum() const;
 
     /**
      * @brief Returns the size of the revision in bytes.
      *
-     * This will only be populated on files with content stored in Drive.
+     * This will only be populated on files with content stored in OneDrive.
      */
     qlonglong fileSize() const;
 
@@ -204,8 +204,8 @@ class KGAPIDRIVE_EXPORT Revision: public KGAPI2::Object
     friend class Private;
 };
 
-} /* namespace Drive */
+} /* namespace OneDrive */
 
 } /* namespace KGAPI2 */
 
-#endif // LIBKGAPI2_DRIVEREVISION_H
+#endif // LIBKGAPI2_ONEDRIVEREVISION_H

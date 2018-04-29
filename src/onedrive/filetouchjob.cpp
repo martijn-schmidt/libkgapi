@@ -21,10 +21,10 @@
  */
 
 #include "filetouchjob.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN FileTouchJob::Private
 {
@@ -65,7 +65,7 @@ FileTouchJob::~FileTouchJob()
 
 QUrl FileTouchJob::url(const QString &fileId)
 {
-    return DriveService::touchFileUrl(fileId);
+    return OneDriveService::touchFileUrl(fileId);
 }
 
 

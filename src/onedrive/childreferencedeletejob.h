@@ -20,21 +20,21 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVECHILDREFERENCEDELETEJOB_H
-#define KGAPI2_DRIVECHILDREFERENCEDELETEJOB_H
+#ifndef KGAPI2_ONEDRIVECHILDREFERENCEDELETEJOB_H
+#define KGAPI2_ONEDRIVECHILDREFERENCEDELETEJOB_H
 
 #include "deletejob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QStringList>
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT ChildReferenceDeleteJob : public KGAPI2::DeleteJob
+class KGAPIONEDRIVE_EXPORT ChildReferenceDeleteJob : public KGAPI2::DeleteJob
 {
     Q_OBJECT
 
@@ -67,8 +67,8 @@ class KGAPIDRIVE_EXPORT ChildReferenceDeleteJob : public KGAPI2::DeleteJob
 
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVECHILDREFERENCEDELETEJOB_H
+#endif // KGAPI2_ONEDRIVECHILDREFERENCEDELETEJOB_H

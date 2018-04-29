@@ -18,12 +18,12 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef LIBKGAPI2_DRIVE_APP_H
-#define LIBKGAPI2_DRIVE_APP_H
+#ifndef LIBKGAPI2_ONEDRIVE_APP_H
+#define LIBKGAPI2_ONEDRIVE_APP_H
 
 #include "types.h"
 #include "object.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QSharedPointer>
 #include <QString>
@@ -33,10 +33,10 @@
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT App: public KGAPI2::Object
+class KGAPIONEDRIVE_EXPORT App: public KGAPI2::Object
 {
     class Private;
 
@@ -97,8 +97,8 @@ class KGAPIDRIVE_EXPORT App: public KGAPI2::Object
     friend class Private;
 };
 
-} /* namespace Drive */
+} /* namespace OneDrive */
 
 } /* namespace KGAPI2 */
 
-#endif // LIBKGAPI2_DRIVE_APP_H
+#endif // LIBKGAPI2_ONEDRIVE_APP_H

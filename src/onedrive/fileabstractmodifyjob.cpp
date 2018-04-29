@@ -22,7 +22,7 @@
 
 #include "fileabstractmodifyjob.h"
 #include "account.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "file.h"
 #include "utils.h"
 
@@ -31,7 +31,7 @@
 
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN FileAbstractModifyJob::Private
 {

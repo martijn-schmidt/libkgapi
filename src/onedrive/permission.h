@@ -18,13 +18,13 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef LIBKGAPI2_DRIVEPERMISSION_H
-#define LIBKGAPI2_DRIVEPERMISSION_H
+#ifndef LIBKGAPI2_ONEDRIVEPERMISSION_H
+#define LIBKGAPI2_ONEDRIVEPERMISSION_H
 
 #include "object.h"
 #include "types.h"
 #include "file.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QString>
 #include <QUrl>
@@ -32,20 +32,20 @@
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
 /**
  * @brief Permission contains a permission for a file.
  *
- * Getters and setters' documentation is based on Google Drive's API v2 reference
+ * Getters and setters' documentation is based on Microsoft OneDrive's API v2 reference
  * @see <a href="https://developers.google.com/drive/v2/reference/permissions">Permissions</a>
  *
  * @since 2.0
  * @author Andrius da Costa Ribas <andriusmao@gmail.com>
  * @author Daniel Vrátil <dvratil@redhat.com>
  */
-class KGAPIDRIVE_EXPORT Permission: public KGAPI2::Object
+class KGAPIONEDRIVE_EXPORT Permission: public KGAPI2::Object
 {
 
   public:
@@ -178,8 +178,8 @@ class KGAPIDRIVE_EXPORT Permission: public KGAPI2::Object
     friend class File::Private;
 };
 
-} /* namespace Drive */
+} /* namespace OneDrive */
 
 } /* namespace KGAPI2 */
 
-#endif // LIBKGAPI2_DRIVEPERMISSION_H
+#endif // LIBKGAPI2_ONEDRIVEPERMISSION_H

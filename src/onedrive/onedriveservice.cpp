@@ -20,7 +20,7 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "utils.h"
 
 #include <QUrlQuery>
@@ -30,18 +30,18 @@ namespace KGAPI2
 
 namespace Private
 {
-    static const QUrl GoogleApisUrl(QStringLiteral("https://www.googleapis.com"));
+    static const QUrl MicrosoftApisUrl(QStringLiteral("https://www.googleapis.com"));
     static const QString AppsBasePath(QStringLiteral("/drive/v2/about"));
     static const QString FilesBasePath(QStringLiteral("/drive/v2/files"));
     static const QString ChangeBasePath(QStringLiteral("/drive/v2/changes"));
 }
 
-namespace DriveService
+namespace OneDriveService
 {
 
 QUrl fetchAboutUrl(bool includeSubscribed, qlonglong maxChangeIdCount, qlonglong startChangeId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::AppsBasePath);
     QUrlQuery query(url);
     query.addQueryItem(QStringLiteral("includeSubscribed"), Utils::bool2Str(includeSubscribed));
@@ -58,112 +58,112 @@ QUrl fetchAboutUrl(bool includeSubscribed, qlonglong maxChangeIdCount, qlonglong
 
 QUrl fetchAppUrl(const QString &appId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::AppsBasePath % QLatin1Char('/') % appId);
     return url;
 }
 
 QUrl fetchAppsUrl()
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::AppsBasePath);
     return url;
 }
 
 QUrl fetchChildReference(const QString &folderId, const QString &referenceId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % folderId % QLatin1String("/children/") % referenceId);
     return url;
 }
 
 QUrl fetchChildReferences(const QString &folderId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % folderId % QLatin1String("/children"));
     return url;
 }
 
 QUrl createChildReference(const QString &folderId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % folderId % QLatin1String("/children"));
     return url;
 }
 
 QUrl deleteChildReference(const QString &folderId, const QString &referenceId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % folderId % QLatin1String("/children/") % referenceId);
     return url;
 }
 
 QUrl fetchChangeUrl(const QString &changeId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::ChangeBasePath % QLatin1Char('/') % changeId);
     return url;
 }
 
 QUrl copyFileUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/copy"));
     return url;
 }
 
 QUrl deleteFileUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId);
     return url;
 }
 
 QUrl fetchFileUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId);
     return url;
 }
 
 QUrl fetchFilesUrl()
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath);
     return url;
 }
 
 QUrl fetchChangesUrl()
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::ChangeBasePath);
     return url;
 }
 
 QUrl touchFileUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/touch"));
     return url;
 }
 
 QUrl trashFileUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/trash"));
     return url;
 }
 
 QUrl untrashFileUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/untrash"));
     return url;
 }
 
 QUrl uploadMetadataFileUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     if (!fileId.isEmpty()) {
         url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId);
     } else {
@@ -174,7 +174,7 @@ QUrl uploadMetadataFileUrl(const QString &fileId)
 
 QUrl uploadMediaFileUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     if (!fileId.isEmpty()) {
         url.setPath(QLatin1String("/upload") % Private::FilesBasePath % QLatin1Char('/') % fileId);
     } else {
@@ -185,7 +185,7 @@ QUrl uploadMediaFileUrl(const QString &fileId)
 
 QUrl uploadMultipartFileUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     if (!fileId.isEmpty()) {
         url.setPath(QLatin1String("/upload") % Private::FilesBasePath % QLatin1Char('/') % fileId);
     } else {
@@ -196,14 +196,14 @@ QUrl uploadMultipartFileUrl(const QString &fileId)
 
 QUrl fetchParentReferenceUrl(const QString &fileId, const QString &referenceId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/parents/") % referenceId);
     return url;
 }
 
 QUrl fetchParentReferencesUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/parents"));
 
     return url;
@@ -211,82 +211,82 @@ QUrl fetchParentReferencesUrl(const QString &fileId)
 
 QUrl createParentReferenceUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/parents"));
     return url;
 }
 
 QUrl deleteParentReferenceUrl(const QString &fileId, const QString &referenceId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/parents/") % referenceId);
     return url;
 }
 
 QUrl fetchPermissionsUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/premissions"));
     return url;
 }
 
 QUrl fetchPermissionUrl(const QString &fileId, const QString &permissionId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/permissions/") % permissionId);
     return url;
 }
 
 QUrl createPermissionUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/permissions"));
     return url;
 }
 
 QUrl deletePermissionUrl(const QString &fileId, const QString &permissionId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/permissions/") % permissionId);
     return url;
 }
 
 QUrl modifyPermissionUrl(const QString &fileId, const QString &permissionId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/permissions/") % permissionId);
     return url;
 }
 
 QUrl fetchRevisionUrl(const QString &fileId, const QString &revisionId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/revisions/") % revisionId);
     return url;
 }
 
 QUrl fetchRevisionsUrl(const QString &fileId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/revisions"));
     return url;
 }
 
 QUrl deleteRevisionUrl(const QString &fileId, const QString &revisionId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/revisions/") % revisionId);
     return url;
 }
 
 QUrl modifyRevisionUrl(const QString &fileId, const QString &revisionId)
 {
-    QUrl url(Private::GoogleApisUrl);
+    QUrl url(Private::MicrosoftApisUrl);
     url.setPath(Private::FilesBasePath % QLatin1Char('/') % fileId % QLatin1String("/revisions/") % revisionId);
     return url;
 }
 
-} // namespace DriveService
+} // namespace OneDriveService
 
 } // namespace KGAPI2
 

@@ -24,7 +24,7 @@
 #include "appfetchjob.h"
 #include "account.h"
 #include "app.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "utils.h"
 
 #include <QNetworkRequest>
@@ -32,7 +32,7 @@
 
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN AppFetchJob::Private
 {
@@ -63,9 +63,9 @@ void AppFetchJob::start()
 {
     QNetworkRequest request;
     if (d->appId.isEmpty()) {
-        request.setUrl(DriveService::fetchAppsUrl());
+        request.setUrl(OneDriveService::fetchAppsUrl());
     } else {
-        request.setUrl(DriveService::fetchAppUrl(d->appId));
+        request.setUrl(OneDriveService::fetchAppUrl(d->appId));
     }
     request.setRawHeader("Authorization", "Bearer " + account()->accessToken().toLatin1());
 

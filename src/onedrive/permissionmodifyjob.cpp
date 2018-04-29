@@ -23,7 +23,7 @@
 
 #include "permissionmodifyjob.h"
 #include "account.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "permission.h"
 #include "utils.h"
 
@@ -32,7 +32,7 @@
 
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN PermissionModifyJob::Private
 {
@@ -60,7 +60,7 @@ void PermissionModifyJob::Private::processNext()
     }
 
     const PermissionPtr permission = permissions.takeFirst();
-    const QUrl url = DriveService::modifyPermissionUrl(fileId, permission->id());
+    const QUrl url = OneDriveService::modifyPermissionUrl(fileId, permission->id());
 
     QNetworkRequest request(url);
     request.setRawHeader("Authorization", "Bearer " + q->account()->accessToken().toLatin1());

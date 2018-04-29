@@ -20,8 +20,8 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef LIBKGAPI2_DRIVEPARENTREFERENCE_P_H
-#define LIBKGAPI2_DRIVEPARENTREFERENCE_P_H
+#ifndef LIBKGAPI2_ONEDRIVEPARENTREFERENCE_P_H
+#define LIBKGAPI2_ONEDRIVEPARENTREFERENCE_P_H
 
 #include "parentreference.h"
 
@@ -30,7 +30,7 @@
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
 class Q_DECL_HIDDEN ParentReference::Private
@@ -48,8 +48,8 @@ class Q_DECL_HIDDEN ParentReference::Private
     static QVariantMap toJSON(const ParentReferencePtr &reference);
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // LIBKGAPI2_DRIVEPARENTREFERENCE_P_H
+#endif // LIBKGAPI2_ONEDRIVEPARENTREFERENCE_P_H

@@ -27,7 +27,7 @@
 #include <QUrlQuery>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN FileAbstractDataJob::Private
 {

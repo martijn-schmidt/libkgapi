@@ -20,19 +20,19 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVECHILDREFERENCEFETCHJOB_H
-#define KGAPI2_DRIVECHILDREFERENCEFETCHJOB_H
+#ifndef KGAPI2_ONEDRIVECHILDREFERENCEFETCHJOB_H
+#define KGAPI2_ONEDRIVECHILDREFERENCEFETCHJOB_H
 
 #include "fetchjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT ChildReferenceFetchJob : public KGAPI2::FetchJob
+class KGAPIONEDRIVE_EXPORT ChildReferenceFetchJob : public KGAPI2::FetchJob
 {
     Q_OBJECT
 
@@ -58,8 +58,8 @@ class KGAPIDRIVE_EXPORT ChildReferenceFetchJob : public KGAPI2::FetchJob
 
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVECHILDREFERENCEFETCHJOB_H
+#endif // KGAPI2_ONEDRIVECHILDREFERENCEFETCHJOB_H

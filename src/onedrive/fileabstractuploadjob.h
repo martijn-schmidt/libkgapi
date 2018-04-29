@@ -20,12 +20,12 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVEFILEABSTRACTUPLOADJOB_H
-#define KGAPI2_DRIVEFILEABSTRACTUPLOADJOB_H
+#ifndef KGAPI2_ONEDRIVEFILEABSTRACTUPLOADJOB_H
+#define KGAPI2_ONEDRIVEFILEABSTRACTUPLOADJOB_H
 
 #include "file.h"
 #include "fileabstractdatajob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QStringList>
 #include <QMap>
@@ -33,10 +33,10 @@
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT FileAbstractUploadJob : public KGAPI2::Drive::FileAbstractDataJob
+class KGAPIONEDRIVE_EXPORT FileAbstractUploadJob : public KGAPI2::OneDrive::FileAbstractDataJob
 {
     Q_OBJECT
 
@@ -103,8 +103,8 @@ class KGAPIDRIVE_EXPORT FileAbstractUploadJob : public KGAPI2::Drive::FileAbstra
 
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEFILEABSTRACTUPLOADJOB_H
+#endif // KGAPI2_ONEDRIVEFILEABSTRACTUPLOADJOB_H

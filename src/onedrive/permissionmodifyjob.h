@@ -21,19 +21,19 @@
  */
 
 
-#ifndef KGAPI2_DRIVEPERMISSIONMODIFYJOB_H
-#define KGAPI2_DRIVEPERMISSIONMODIFYJOB_H
+#ifndef KGAPI2_ONEDRIVEPERMISSIONMODIFYJOB_H
+#define KGAPI2_ONEDRIVEPERMISSIONMODIFYJOB_H
 
 #include "modifyjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT PermissionModifyJob : public KGAPI2::ModifyJob
+class KGAPIONEDRIVE_EXPORT PermissionModifyJob : public KGAPI2::ModifyJob
 {
     Q_OBJECT
 
@@ -57,8 +57,8 @@ class KGAPIDRIVE_EXPORT PermissionModifyJob : public KGAPI2::ModifyJob
     friend class Private;
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEPERMISSIONMODIFYJOB_H
+#endif // KGAPI2_ONEDRIVEPERMISSIONMODIFYJOB_H

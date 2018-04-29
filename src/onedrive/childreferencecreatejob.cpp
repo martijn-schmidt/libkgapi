@@ -23,7 +23,7 @@
 #include "childreferencecreatejob.h"
 #include "account.h"
 #include "childreference.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "utils.h"
 
 #include <QNetworkRequest>
@@ -31,7 +31,7 @@
 
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN ChildReferenceCreateJob::Private
 {
@@ -59,7 +59,7 @@ void ChildReferenceCreateJob::Private::processNext()
     }
 
     const ChildReferencePtr reference = references.takeFirst();
-    const QUrl url = DriveService::createChildReference(folderId);
+    const QUrl url = OneDriveService::createChildReference(folderId);
 
     QNetworkRequest request;
     request.setRawHeader("Authorization", "Bearer " + q->account()->accessToken().toLatin1());

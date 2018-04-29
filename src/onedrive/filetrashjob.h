@@ -20,11 +20,11 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVEFILETRASHJOB_H
-#define KGAPI2_DRIVEFILETRASHJOB_H
+#ifndef KGAPI2_ONEDRIVEFILETRASHJOB_H
+#define KGAPI2_ONEDRIVEFILETRASHJOB_H
 
 #include "fileabstractmodifyjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 class QNetworkAccessManager;
 class QNetworkRequest;
@@ -32,10 +32,10 @@ class QNetworkRequest;
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT FileTrashJob : public KGAPI2::Drive::FileAbstractModifyJob
+class KGAPIONEDRIVE_EXPORT FileTrashJob : public KGAPI2::OneDrive::FileAbstractModifyJob
 {
     Q_OBJECT
 
@@ -63,8 +63,8 @@ class KGAPIDRIVE_EXPORT FileTrashJob : public KGAPI2::Drive::FileAbstractModifyJ
     friend class Private;
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEFILETRASHJOB_H
+#endif // KGAPI2_ONEDRIVEFILETRASHJOB_H

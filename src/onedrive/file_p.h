@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef LIBKGAPI2_DRIVEFILE_P_H
-#define LIBKGAPI2_DRIVEFILE_P_H
+#ifndef LIBKGAPI2_ONEDRIVEFILE_P_H
+#define LIBKGAPI2_ONEDRIVEFILE_P_H
 
 #include "file.h"
 
@@ -28,7 +28,7 @@
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
 class Q_DECL_HIDDEN File::Private
@@ -79,8 +79,8 @@ class Q_DECL_HIDDEN File::Private
 
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // LIBKGAPI2_DRIVEFILE_P_H
+#endif // LIBKGAPI2_ONEDRIVEFILE_P_H

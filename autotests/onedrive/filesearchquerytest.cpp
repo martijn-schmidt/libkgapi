@@ -24,9 +24,9 @@
 #include "filesearchquery.h"
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
-Q_DECLARE_METATYPE(KGAPI2::Drive::FileSearchQuery)
+Q_DECLARE_METATYPE(KGAPI2::OneDrive::FileSearchQuery)
 
 class FileSearchQueryTest: public QObject
 {

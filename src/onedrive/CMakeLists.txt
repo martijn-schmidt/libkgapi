@@ -1,4 +1,4 @@
-set(kgapidrive_SRCS
+set(kgapionedrive_SRCS
     about.cpp
     aboutfetchjob.cpp
     app.cpp
@@ -9,7 +9,7 @@ set(kgapidrive_SRCS
     childreferencecreatejob.cpp
     childreferencedeletejob.cpp
     childreferencefetchjob.cpp
-    driveservice.cpp
+    onedriveservice.cpp
     file.cpp
     fileabstractdatajob.cpp
     fileabstractmodifyjob.cpp
@@ -42,7 +42,7 @@ set(kgapidrive_SRCS
     ../debug.cpp
 )
 
-ecm_generate_headers(kgapidrive_CamelCase_HEADERS
+ecm_generate_headers(kgapionedrive_CamelCase_HEADERS
     HEADER_NAMES
     About
     AboutFetchJob
@@ -82,54 +82,54 @@ ecm_generate_headers(kgapidrive_CamelCase_HEADERS
     RevisionFetchJob
     RevisionModifyJob
     User
-    PREFIX KGAPI/Drive
-    REQUIRED_HEADERS kgapidrive_HEADERS
+    PREFIX KGAPI/OneDrive
+    REQUIRED_HEADERS kgapionedrive_HEADERS
 )
 
-add_library(KPimGAPIDrive
-    ${kgapidrive_SRCS}
+add_library(KPimGAPIOneDrive
+    ${kgapionedrive_SRCS}
 )
 
-generate_export_header(KPimGAPIDrive BASE_NAME kgapidrive)
+generate_export_header(KPimGAPIOneDrive BASE_NAME kgapionedrive)
 
-add_library(KPim::GAPIDrive ALIAS KPimGAPIDrive)
+add_library(KPim::GAPIOneDrive ALIAS KPimGAPIOneDrive)
 # TODO: Backwards compatibility, remove in next major release
-add_library(KF5::GAPIDrive ALIAS KPimGAPIDrive)
-target_include_directories(KPimGAPIDrive INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim/KGAPI>")
+add_library(KF5::GAPIOneDrive ALIAS KPimGAPIOneDrive)
+target_include_directories(KPimGAPIOneDrive INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim/KGAPI>")
 
-target_link_libraries(KPimGAPIDrive
+target_link_libraries(KPimGAPIOneDrive
 PUBLIC
     KPim::GAPICore
 PRIVATE
     Qt5::Network
 )
 
-set_target_properties(KPimGAPIDrive PROPERTIES
+set_target_properties(KPimGAPIOneDrive PROPERTIES
     VERSION ${KGAPI_VERSION_STRING}
     SOVERSION ${KGAPI_SOVERSION}
-    EXPORT_NAME GAPIDrive
+    EXPORT_NAME GAPIOneDrive
 )
 
 install(TARGETS
-    KPimGAPIDrive
+    KPimGAPIOneDrive
     EXPORT KPimGAPITargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
 install(FILES
-    ${kgapidrive_CamelCase_HEADERS}
-    DESTINATION "${KDE_INSTALL_INCLUDEDIR}/KPim/KGAPI/KGAPI/Drive"
+    ${kgapionedrive_CamelCase_HEADERS}
+    DESTINATION "${KDE_INSTALL_INCLUDEDIR}/KPim/KGAPI/KGAPI/OneDrive"
     COMPONENT Devel
 )
 
 install(FILES
-    ${kgapidrive_HEADERS}
-    "${CMAKE_CURRENT_BINARY_DIR}/kgapidrive_export.h"
+    ${kgapionedrive_HEADERS}
+    "${CMAKE_CURRENT_BINARY_DIR}/kgapionedrive_export.h"
     DESTINATION "${KDE_INSTALL_INCLUDEDIR}/KPim/KGAPI/kgapi/drive"
     COMPONENT Devel
 )
 
-ecm_generate_pri_file(BASE_NAME KGAPIDrive
-    LIB_NAME KPimGAPIDrive
+ecm_generate_pri_file(BASE_NAME KGAPIOneDrive
+    LIB_NAME KPimGAPIOneDrive
     DEPS "GAPICore"
     FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR "${KDE_INSTALL_INCLUDEDIR}/KPim/KGAPI"
 )

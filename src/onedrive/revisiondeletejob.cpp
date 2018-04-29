@@ -22,13 +22,13 @@
 
 #include "revisiondeletejob.h"
 #include "account.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "revision.h"
 
 #include <QNetworkRequest>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN RevisionDeleteJob::Private
 {
@@ -96,7 +96,7 @@ void RevisionDeleteJob::start()
     }
 
     const QString revisionId = d->revisionsIds.takeFirst();
-    const QUrl url = DriveService::deleteRevisionUrl(d->fileId, revisionId);
+    const QUrl url = OneDriveService::deleteRevisionUrl(d->fileId, revisionId);
 
     QNetworkRequest request(url);
     request.setRawHeader("Authorization", "Bearer " + account()->accessToken().toLatin1());

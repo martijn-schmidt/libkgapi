@@ -20,19 +20,19 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVECHANGEFETCHJOB_H
-#define KGAPI2_DRIVECHANGEFETCHJOB_H
+#ifndef KGAPI2_ONEDRIVECHANGEFETCHJOB_H
+#define KGAPI2_ONEDRIVECHANGEFETCHJOB_H
 
 #include "fetchjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT ChangeFetchJob : public KGAPI2::FetchJob
+class KGAPIONEDRIVE_EXPORT ChangeFetchJob : public KGAPI2::FetchJob
 {
     Q_OBJECT
 
@@ -51,7 +51,7 @@ class KGAPIDRIVE_EXPORT ChangeFetchJob : public KGAPI2::FetchJob
     /**
      * Whether to include shared files and public files the user has opened.
      * When set to false, the list will include owned files plus any shared or
-     * public files the user has explictly added to a folder in Drive.
+     * public files the user has explictly added to a folder in OneDrive.
      *
      * Default is to include subscribed files.
      *
@@ -116,8 +116,8 @@ class KGAPIDRIVE_EXPORT ChangeFetchJob : public KGAPI2::FetchJob
 
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVECHANGEFETCHJOB_H
+#endif // KGAPI2_ONEDRIVECHANGEFETCHJOB_H

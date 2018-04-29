@@ -20,19 +20,19 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVEFILETOUCHJOB_H
-#define KGAPI2_DRIVEFILETOUCHJOB_H
+#ifndef KGAPI2_ONEDRIVEFILETOUCHJOB_H
+#define KGAPI2_ONEDRIVEFILETOUCHJOB_H
 
 #include "fileabstractmodifyjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT FileTouchJob : public KGAPI2::Drive::FileAbstractModifyJob
+class KGAPIONEDRIVE_EXPORT FileTouchJob : public KGAPI2::OneDrive::FileAbstractModifyJob
 {
     Q_OBJECT
 
@@ -56,8 +56,8 @@ class KGAPIDRIVE_EXPORT FileTouchJob : public KGAPI2::Drive::FileAbstractModifyJ
     friend class Private;
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEFILETOUCHJOB_H
+#endif // KGAPI2_ONEDRIVEFILETOUCHJOB_H

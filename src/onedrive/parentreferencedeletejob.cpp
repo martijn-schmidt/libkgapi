@@ -24,13 +24,13 @@
 #include "parentreferencedeletejob.h"
 #include "account.h"
 #include "parentreference.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "utils.h"
 
 #include <QNetworkRequest>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN ParentReferenceDeleteJob::Private
 {
@@ -98,7 +98,7 @@ void ParentReferenceDeleteJob::start()
     }
 
     const QString referenceId = d->referencesIds.takeFirst();
-    const QUrl url = DriveService::deleteParentReferenceUrl(d->fileId, referenceId);
+    const QUrl url = OneDriveService::deleteParentReferenceUrl(d->fileId, referenceId);
 
     QNetworkRequest request(url);
     request.setRawHeader("Authorization", "Bearer " + account()->accessToken().toLatin1());

@@ -21,21 +21,21 @@
  */
 
 
-#ifndef KGAPI2_DRIVEPARENTREFERENCEDELETEJOB_H
-#define KGAPI2_DRIVEPARENTREFERENCEDELETEJOB_H
+#ifndef KGAPI2_ONEDRIVEPARENTREFERENCEDELETEJOB_H
+#define KGAPI2_ONEDRIVEPARENTREFERENCEDELETEJOB_H
 
 #include "deletejob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QStringList>
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT ParentReferenceDeleteJob : public KGAPI2::DeleteJob
+class KGAPIONEDRIVE_EXPORT ParentReferenceDeleteJob : public KGAPI2::DeleteJob
 {
     Q_OBJECT
 
@@ -68,8 +68,8 @@ class KGAPIDRIVE_EXPORT ParentReferenceDeleteJob : public KGAPI2::DeleteJob
 
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEPARENTREFERENCEDELETEJOB_H
+#endif // KGAPI2_ONEDRIVEPARENTREFERENCEDELETEJOB_H

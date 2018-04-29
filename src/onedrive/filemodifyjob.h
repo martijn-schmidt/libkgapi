@@ -21,19 +21,19 @@
  */
 
 
-#ifndef KGAPI2_DRIVEFILEMODIFYJOB_H
-#define KGAPI2_DRIVEFILEMODIFYJOB_H
+#ifndef KGAPI2_ONEDRIVEFILEMODIFYJOB_H
+#define KGAPI2_ONEDRIVEFILEMODIFYJOB_H
 
 #include "fileabstractuploadjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT FileModifyJob : public KGAPI2::Drive::FileAbstractUploadJob
+class KGAPIONEDRIVE_EXPORT FileModifyJob : public KGAPI2::OneDrive::FileAbstractUploadJob
 {
     Q_OBJECT
 
@@ -110,8 +110,8 @@ class KGAPIDRIVE_EXPORT FileModifyJob : public KGAPI2::Drive::FileAbstractUpload
 
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEFILEMODIFYJOB_H
+#endif // KGAPI2_ONEDRIVEFILEMODIFYJOB_H

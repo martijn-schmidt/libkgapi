@@ -21,7 +21,7 @@
  */
 
 #include "permissionfetchjob.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "account.h"
 #include "file.h"
 #include "permission.h"
@@ -32,7 +32,7 @@
 #include <QNetworkReply>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN PermissionFetchJob::Private
 {
@@ -91,9 +91,9 @@ void PermissionFetchJob::start()
 {
     QNetworkRequest request;
     if (d->permissionId.isEmpty()) {
-        request.setUrl(DriveService::fetchPermissionsUrl(d->fileId));
+        request.setUrl(OneDriveService::fetchPermissionsUrl(d->fileId));
     } else {
-        request.setUrl(DriveService::fetchPermissionUrl(d->fileId, d->permissionId));
+        request.setUrl(OneDriveService::fetchPermissionUrl(d->fileId, d->permissionId));
     }
     request.setRawHeader("Authorization", "Bearer " + account()->accessToken().toLatin1());
 

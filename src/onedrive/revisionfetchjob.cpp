@@ -21,7 +21,7 @@
  */
 #include "revisionfetchjob.h"
 #include "account.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "revision.h"
 #include "utils.h"
 
@@ -30,7 +30,7 @@
 
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN RevisionFetchJob::Private
 {
@@ -68,9 +68,9 @@ void RevisionFetchJob::start()
 {
     QNetworkRequest request;
     if (d->revisionId.isEmpty()) {
-        request.setUrl(DriveService::fetchRevisionsUrl(d->fileId));
+        request.setUrl(OneDriveService::fetchRevisionsUrl(d->fileId));
     } else {
-        request.setUrl(DriveService::fetchRevisionUrl(d->fileId, d->revisionId));
+        request.setUrl(OneDriveService::fetchRevisionUrl(d->fileId, d->revisionId));
     }
     request.setRawHeader("Authorization", "Bearer " + account()->accessToken().toLatin1());
 

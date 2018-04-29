@@ -20,25 +20,25 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVEFILEABSTRACTDATAJOB_H
-#define KGAPI2_DRIVEFILEABSTRACTDATAJOB_H
+#ifndef KGAPI2_ONEDRIVEFILEABSTRACTDATAJOB_H
+#define KGAPI2_ONEDRIVEFILEABSTRACTDATAJOB_H
 
 #include "createjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT FileAbstractDataJob : public KGAPI2::Job
+class KGAPIONEDRIVE_EXPORT FileAbstractDataJob : public KGAPI2::Job
 {
 
     Q_OBJECT
 
     /**
-     * Whether to convert this file to the corresponding Google Docs format.
+     * Whether to convert this file to the corresponding Microsoft Office format.
      *
      * Default value is false.
      *
@@ -131,8 +131,8 @@ class KGAPIDRIVE_EXPORT FileAbstractDataJob : public KGAPI2::Job
 
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEFILEABSTRACTDATAJOB_H
+#endif // KGAPI2_ONEDRIVEFILEABSTRACTDATAJOB_H

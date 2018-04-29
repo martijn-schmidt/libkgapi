@@ -24,7 +24,7 @@
 #include "filesearchquery.h"
 #include "account.h"
 #include "../debug.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "file.h"
 #include "utils.h"
 
@@ -33,7 +33,7 @@
 #include <QUrlQuery>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN FileFetchJob::Private
 {
@@ -228,7 +228,7 @@ void FileFetchJob::Private::processNext()
     QUrl url;
 
     if (isFeed) {
-        url = DriveService::fetchFilesUrl();
+        url = OneDriveService::fetchFilesUrl();
         QUrlQuery query(url);
         if (!searchQuery.isEmpty()) {
             query.addQueryItem(QStringLiteral("q"), searchQuery.serialize());
@@ -246,7 +246,7 @@ void FileFetchJob::Private::processNext()
         }
 
         const QString fileId = filesIDs.takeFirst();
-        url = DriveService::fetchFileUrl(fileId);
+        url = OneDriveService::fetchFileUrl(fileId);
         if (fields != FileFetchJob::AllFields) {
             const QStringList fieldsStrings = fieldsToStrings(fields);
             QUrlQuery query(url);

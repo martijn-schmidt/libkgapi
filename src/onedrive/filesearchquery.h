@@ -18,17 +18,17 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVE_FILESEARCHQUERY_H
-#define KGAPI2_DRIVE_FILESEARCHQUERY_H
+#ifndef KGAPI2_ONEDRIVE_FILESEARCHQUERY_H
+#define KGAPI2_ONEDRIVE_FILESEARCHQUERY_H
 
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 #include <QVariant>
 #include <QSharedDataPointer>
 
 namespace KGAPI2
 {
-namespace Drive
+namespace OneDrive
 {
 
 /**
@@ -40,7 +40,7 @@ namespace Drive
  *
  * @since 2.3
  */
-class KGAPIDRIVE_EXPORT FileSearchQuery
+class KGAPIONEDRIVE_EXPORT FileSearchQuery
 {
 public:
     enum Field {
@@ -95,4 +95,4 @@ public:
 }
 }
 
-#endif // KGAPI2_DRIVE_FILESEARCHQUERY_H
+#endif // KGAPI2_ONEDRIVE_FILESEARCHQUERY_H

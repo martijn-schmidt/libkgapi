@@ -25,7 +25,7 @@
 #include <QJsonDocument>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 ParentReference::Private::Private():
     isRoot(false)

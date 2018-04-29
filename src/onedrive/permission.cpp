@@ -24,7 +24,7 @@
 #include <QJsonDocument>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 Permission::Role Permission::Private::roleFromName(const QString &roleName)
 {

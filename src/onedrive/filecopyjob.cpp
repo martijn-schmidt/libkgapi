@@ -21,7 +21,7 @@
  */
 #include "filecopyjob.h"
 #include "account.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "file.h"
 #include "utils.h"
 
@@ -30,7 +30,7 @@
 
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN FileCopyJob::Private
 {
@@ -61,7 +61,7 @@ void FileCopyJob::Private::processNext()
     const QString fileId = files.cbegin().key();
     const FilePtr file = files.take(fileId);
 
-    QUrl url = DriveService::copyFileUrl(fileId);
+    QUrl url = OneDriveService::copyFileUrl(fileId);
     q->updateUrl(url);
 
     QNetworkRequest request(url);

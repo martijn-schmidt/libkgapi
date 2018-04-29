@@ -22,7 +22,7 @@
 
 #include "revisionmodifyjob.h"
 #include "account.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "revision.h"
 #include "utils.h"
 
@@ -31,7 +31,7 @@
 
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN RevisionModifyJob::Private
 {
@@ -59,7 +59,7 @@ void RevisionModifyJob::Private::processNext()
     }
 
     const RevisionPtr revision = revisions.takeFirst();
-    const QUrl url = DriveService::modifyRevisionUrl(fileId, revision->id());
+    const QUrl url = OneDriveService::modifyRevisionUrl(fileId, revision->id());
 
     QNetworkRequest request(url);
     request.setRawHeader("Authorization", "Bearer " + q->account()->accessToken().toLatin1());

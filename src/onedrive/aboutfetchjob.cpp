@@ -24,7 +24,7 @@
 #include "about.h"
 #include "account.h"
 #include "../debug.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "utils.h"
 
 
@@ -32,7 +32,7 @@
 #include <QNetworkReply>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN AboutFetchJob::Private
 {
@@ -120,7 +120,7 @@ void AboutFetchJob::start()
 {
     QNetworkRequest request;
     request.setRawHeader("Authorization", "Bearer " + account()->accessToken().toLatin1());
-    request.setUrl(DriveService::fetchAboutUrl(d->includeSubscribed, d->maxChangeIdCount, d->startChangeId));
+    request.setUrl(OneDriveService::fetchAboutUrl(d->includeSubscribed, d->maxChangeIdCount, d->startChangeId));
 
     enqueueRequest(request);
 }

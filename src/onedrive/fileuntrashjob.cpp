@@ -22,13 +22,13 @@
 
 
 #include "fileuntrashjob.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN FileUntrashJob::Private
 {
@@ -73,7 +73,7 @@ FileUntrashJob::~FileUntrashJob()
 
 QUrl FileUntrashJob::url(const QString &fileId)
 {
-    return DriveService::untrashFileUrl(fileId);
+    return OneDriveService::untrashFileUrl(fileId);
 }
 
 void FileUntrashJob::dispatchRequest(QNetworkAccessManager *accessManager,

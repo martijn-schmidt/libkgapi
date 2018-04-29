@@ -24,7 +24,7 @@
 #include "fileabstractuploadjob.h"
 #include "account.h"
 #include "../debug.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "file.h"
 #include "utils.h"
 
@@ -38,7 +38,7 @@
 #include <QUrlQuery>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN FileAbstractUploadJob::Private
 {

@@ -22,13 +22,13 @@
 
 #include "filedeletejob.h"
 #include "account.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "file.h"
 
 #include <QNetworkRequest>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN FileDeleteJob::Private
 {
@@ -87,7 +87,7 @@ void FileDeleteJob::start()
     }
 
     const QString fileId = d->filesIDs.takeFirst();
-    const QUrl url = DriveService::deleteFileUrl(fileId);
+    const QUrl url = OneDriveService::deleteFileUrl(fileId);
 
     QNetworkRequest request(url);
     request.setRawHeader("Authorization", "Bearer " + account()->accessToken().toLatin1());

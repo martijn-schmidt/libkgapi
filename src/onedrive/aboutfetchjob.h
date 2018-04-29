@@ -20,22 +20,22 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVEABOUTFETCHJOB_H
-#define KGAPI2_DRIVEABOUTFETCHJOB_H
+#ifndef KGAPI2_ONEDRIVEABOUTFETCHJOB_H
+#define KGAPI2_ONEDRIVEABOUTFETCHJOB_H
 
 #include "fetchjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
 /**
- * @brief A fetch job that retrieves DriveAbout data.
+ * @brief A fetch job that retrieves OneDriveAbout data.
  */
-class KGAPIDRIVE_EXPORT AboutFetchJob : public KGAPI2::FetchJob
+class KGAPIONEDRIVE_EXPORT AboutFetchJob : public KGAPI2::FetchJob
 {
     Q_OBJECT
 
@@ -45,7 +45,7 @@ class KGAPIDRIVE_EXPORT AboutFetchJob : public KGAPI2::FetchJob
      * When calculating the number of remaining change IDs, whether to include
      * shared files and public files the user has opened. When set to false, this
      * counts only change IDs for owned files and any shared or public files that
-     * the user has explictly added to a folder in Drive.
+     * the user has explictly added to a folder in OneDrive.
      *
      * Default value is true.
      *
@@ -136,7 +136,7 @@ class KGAPIDRIVE_EXPORT AboutFetchJob : public KGAPI2::FetchJob
     void setStartChangeId(qlonglong startChangeId);
 
     /**
-     * @brief Returns the retrieved DriveAbout object
+     * @brief Returns the retrieved OneDriveAbout object
      *
      * This method can only be called after the job has emitted finished()
      */
@@ -164,8 +164,8 @@ class KGAPIDRIVE_EXPORT AboutFetchJob : public KGAPI2::FetchJob
 
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // DRIVEABOUTFETCHJOB_H
+#endif // ONEDRIVEABOUTFETCHJOB_H

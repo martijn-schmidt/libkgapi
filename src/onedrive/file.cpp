@@ -28,9 +28,9 @@
 #include <QJsonDocument>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
-///// DriveFile::Labels
+///// OneDriveFile::Labels
 
 class Q_DECL_HIDDEN File::Labels::Private
 {
@@ -127,7 +127,7 @@ void File::Labels::setViewed(bool viewed)
     d->viewed = viewed;
 }
 
-///// DriveFile::ImageMediaMetadata
+///// OneDriveFile::ImageMediaMetadata
 
 class Q_DECL_HIDDEN File::IndexableText::Private
 {
@@ -172,7 +172,7 @@ void File::IndexableText::setText(const QString &text)
     d->text = text;
 }
 
-///// DriveFile::ImageMediaMetadata::Location
+///// OneDriveFile::ImageMediaMetadata::Location
 
 class Q_DECL_HIDDEN File::ImageMediaMetadata::Location::Private
 {
@@ -229,7 +229,7 @@ qreal File::ImageMediaMetadata::Location::altitude() const
     return d->altitude;
 }
 
-///// DriveFile::ImageMediaMetadata
+///// OneDriveFile::ImageMediaMetadata
 
 class Q_DECL_HIDDEN File::ImageMediaMetadata::Private
 {
@@ -447,7 +447,7 @@ QString File::ImageMediaMetadata::lens() const
 }
 
 
-////// DriveFile::Thumbnail
+////// OneDriveFile::Thumbnail
 
 class Q_DECL_HIDDEN File::Thumbnail::Private
 {
@@ -497,7 +497,7 @@ QString File::Thumbnail::mimeType() const
     return d->mimeType;
 }
 
-////// DriveFile
+////// OneDriveFile
 
 File::Private::Private():
     fileSize(-1),

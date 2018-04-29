@@ -23,7 +23,7 @@
 #include "filemodifyjob.h"
 #include "file.h"
 #include "../debug.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "utils.h"
 
 #include <QNetworkRequest>
@@ -31,7 +31,7 @@
 #include <QUrlQuery>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN FileModifyJob::Private
 {
@@ -160,11 +160,11 @@ QUrl FileModifyJob::createUrl(const QString &filePath,
     QUrl url;
 
     if (metaData.isNull()) {
-        url = DriveService::uploadMediaFileUrl(d->files.value(filePath));
+        url = OneDriveService::uploadMediaFileUrl(d->files.value(filePath));
     } else if (filePath.isEmpty()) {
-        url = DriveService::uploadMetadataFileUrl(metaData->id());
+        url = OneDriveService::uploadMetadataFileUrl(metaData->id());
     } else {
-        url = DriveService::uploadMultipartFileUrl(d->files.value(filePath));
+        url = OneDriveService::uploadMultipartFileUrl(d->files.value(filePath));
     }
 
     QUrlQuery query(url);

@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef LIBKGAPI2_DRIVEFILE_H
-#define LIBKGAPI2_DRIVEFILE_H
+#ifndef LIBKGAPI2_ONEDRIVEFILE_H
+#define LIBKGAPI2_ONEDRIVEFILE_H
 
 #include "object.h"
 #include "types.h"
@@ -36,26 +36,26 @@
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
 /**
  * @brief File contains metadata for a file.
- * Getters and setters' documentation is based on Google Drive's API v2 reference
+ * Getters and setters' documentation is based on Microsoft OneDrive's API v2 reference
  * @see <a href="https://developers.google.com/drive/v2/reference/files">Files</a>
  *
  * @since 2.0
  * @author Andrius da Costa Ribas <andriusmao@gmail.com>
  * @author Daniel Vrátil <dvratil@redhat.com>
  */
-class KGAPIDRIVE_EXPORT File: public KGAPI2::Object
+class KGAPIONEDRIVE_EXPORT File: public KGAPI2::Object
 {
   private:
     class Private;
 
   public:
     /**
-     * @brief DriveFile::Labels holds the structure used for labels property.
+     * @brief OneDriveFile::Labels holds the structure used for labels property.
      */
     class Labels
     {
@@ -81,16 +81,16 @@ class KGAPIDRIVE_EXPORT File: public KGAPI2::Object
          * @deprecated The 'hidden' label has been deprecated in the v2 api and removed in the v3 one.
          *             You can just ignore it.
          */
-#ifndef KGAPIDRIVE_NO_DEPRECATED
-        KGAPIDRIVE_DEPRECATED bool hidden() const;
+#ifndef KGAPIONEDRIVE_NO_DEPRECATED
+        KGAPIONEDRIVE_DEPRECATED bool hidden() const;
 #endif
 
         /**
          * @brief Sets whether this file has the 'hidden' label set.
          * @deprecated The 'hidden' label has been deprecated in the v2 api and removed in the v3 one.
          */
-#ifndef KGAPIDRIVE_NO_DEPRECATED
-        KGAPIDRIVE_DEPRECATED void setHidden(bool hidden);
+#ifndef KGAPIONEDRIVE_NO_DEPRECATED
+        KGAPIONEDRIVE_DEPRECATED void setHidden(bool hidden);
 #endif
 
         /**
@@ -140,7 +140,7 @@ class KGAPIDRIVE_EXPORT File: public KGAPI2::Object
     typedef QList<LabelsPtr> LabelsList;
 
     /**
-     * @brief DriveFile::IndexableText holds the structure used for indexableText property.
+     * @brief OneDriveFile::IndexableText holds the structure used for indexableText property.
      */
     class IndexableText
     {
@@ -172,14 +172,14 @@ class KGAPIDRIVE_EXPORT File: public KGAPI2::Object
     typedef QSharedPointer<IndexableText> IndexableTextPtr;
 
     /**
-     * @brief DriveFile::ImageMediaMetadata holds the structure used for
+     * @brief OneDriveFile::ImageMediaMetadata holds the structure used for
      *        imageMediaMetadata property.
      */
     class ImageMediaMetadata
     {
       public:
         /**
-         * @brief DriveFile::ImageMediaMetadata::Location holds the structure used
+         * @brief OneDriveFile::ImageMediaMetadata::Location holds the structure used
          *        for imageMediaMetadata.location property.
          */
         class Location
@@ -414,7 +414,7 @@ class KGAPIDRIVE_EXPORT File: public KGAPI2::Object
     /**
      * @brief Returns a short lived download URL for the file.
      *
-     * This is only populated for files with content stored in Drive.
+     * This is only populated for files with content stored in OneDrive.
      */
     QUrl downloadUrl() const;
 
@@ -434,27 +434,27 @@ class KGAPIDRIVE_EXPORT File: public KGAPI2::Object
      * @brief Returns the file extension used when downloading this file.
      *
      * This field is read only. To set the extension, include it on title when creating the file.
-     * This is populated only for files with content stored in Drive.
+     * This is populated only for files with content stored in OneDrive.
      */
     QString fileExtension() const;
 
     /**
      * @brief Returns an MD5 checksum for the content of this file.
      *
-     * This is populated only for files with content stored in Drive.
+     * This is populated only for files with content stored in OneDrive.
      */
     QString md5Checksum() const;
 
     /**
      * @brief Returns the size of the file in bytes.
      *
-     * This is populated only for files with content stored in Drive.
+     * This is populated only for files with content stored in OneDrive.
      */
     qlonglong fileSize() const;
 
     /**
      * @brief Returns a link for opening the file in using a relevant
-     *        Google editor or viewer.
+     *        Microsoft editor or viewer.
      */
     QUrl alternateLink() const;
 
@@ -489,7 +489,7 @@ class KGAPIDRIVE_EXPORT File: public KGAPI2::Object
     void setParents(const ParentReferencesList &parents);
 
     /**
-     * @brief Returns the links for exporting Google Docs to specific formats.
+     * @brief Returns the links for exporting Microsoft Office to specific formats.
      *
      * This is a map from the export format to URL.
      */
@@ -500,7 +500,7 @@ class KGAPIDRIVE_EXPORT File: public KGAPI2::Object
      *        or the original title if the file was inserted through the API.
      *
      * Note that renames of the title will not change the original filename.
-     * This will only be populated on files with content stored in Drive.
+     * This will only be populated on files with content stored in OneDrive.
      */
     QString originalFileName() const;
 
@@ -604,10 +604,10 @@ private:
     friend class Permission;
 };
 
-} /* namespace Drive */
+} /* namespace OneDrive */
 
 } /* namespace KGAPI2 */
 
-Q_DECLARE_OPERATORS_FOR_FLAGS(KGAPI2::Drive::File::SerializationOptions)
+Q_DECLARE_OPERATORS_FOR_FLAGS(KGAPI2::OneDrive::File::SerializationOptions)
 
-#endif // LIBKGAPI2_DRIVEFILE_H
+#endif // LIBKGAPI2_ONEDRIVEFILE_H

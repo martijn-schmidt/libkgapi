@@ -20,19 +20,19 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef KGAPI2_DRIVEREVISIONMODIFYJOB_H
-#define KGAPI2_DRIVEREVISIONMODIFYJOB_H
+#ifndef KGAPI2_ONEDRIVEREVISIONMODIFYJOB_H
+#define KGAPI2_ONEDRIVEREVISIONMODIFYJOB_H
 
 #include "modifyjob.h"
-#include "kgapidrive_export.h"
+#include "kgapionedrive_export.h"
 
 namespace KGAPI2
 {
 
-namespace Drive
+namespace OneDrive
 {
 
-class KGAPIDRIVE_EXPORT RevisionModifyJob : public KGAPI2::ModifyJob
+class KGAPIONEDRIVE_EXPORT RevisionModifyJob : public KGAPI2::ModifyJob
 {
     Q_OBJECT
 
@@ -56,8 +56,8 @@ class KGAPIDRIVE_EXPORT RevisionModifyJob : public KGAPI2::ModifyJob
     friend class Private;
 };
 
-} // namespace Drive
+} // namespace OneDrive
 
 } // namespace KGAPI2
 
-#endif // KGAPI2_DRIVEREVISIONMODIFYJOB_H
+#endif // KGAPI2_ONEDRIVEREVISIONMODIFYJOB_H

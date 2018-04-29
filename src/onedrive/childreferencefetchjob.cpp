@@ -23,7 +23,7 @@
 #include "childreferencefetchjob.h"
 #include "account.h"
 #include "childreference.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "utils.h"
 
 #include <QNetworkRequest>
@@ -31,7 +31,7 @@
 
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN ChildReferenceFetchJob::Private
 {
@@ -89,9 +89,9 @@ void ChildReferenceFetchJob::start()
 {
     QUrl url;
     if (d->childId.isEmpty()) {
-        url = DriveService::fetchChildReferences(d->folderId);
+        url = OneDriveService::fetchChildReferences(d->folderId);
     } else {
-        url = DriveService::fetchParentReferenceUrl(d->folderId, d->childId);
+        url = OneDriveService::fetchParentReferenceUrl(d->folderId, d->childId);
     }
 
     const QNetworkRequest request = d->createRequest(url);

@@ -24,12 +24,12 @@
 #include "permissiondeletejob.h"
 #include "permission.h"
 #include "account.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 
 #include <QNetworkRequest>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN PermissionDeleteJob::Private
 {
@@ -97,7 +97,7 @@ void PermissionDeleteJob::start()
     }
 
     const QString permissionId = d->permissionsIds.takeFirst();
-    const QUrl url = DriveService::deletePermissionUrl(d->fileId, permissionId);
+    const QUrl url = OneDriveService::deletePermissionUrl(d->fileId, permissionId);
     QNetworkRequest request(url);
     request.setRawHeader("Authorization", "Bearer " + account()->accessToken().toLatin1());
 

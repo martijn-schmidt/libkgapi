@@ -24,7 +24,7 @@
 #include "account.h"
 #include "change.h"
 #include "../debug.h"
-#include "driveservice.h"
+#include "onedriveservice.h"
 #include "utils.h"
 
 #include <QNetworkReply>
@@ -32,7 +32,7 @@
 #include <QUrlQuery>
 
 using namespace KGAPI2;
-using namespace KGAPI2::Drive;
+using namespace KGAPI2::OneDrive;
 
 class Q_DECL_HIDDEN ChangeFetchJob::Private
 {
@@ -153,7 +153,7 @@ void ChangeFetchJob::start()
 {
     QUrl url;
     if (d->changeId.isEmpty()) {
-        url = DriveService::fetchChangesUrl();
+        url = OneDriveService::fetchChangesUrl();
         QUrlQuery query(url);
         query.addQueryItem(QStringLiteral("includeDeleted"), Utils::bool2Str(d->includeDeleted));
         query.addQueryItem(QStringLiteral("includeSubscribed"), Utils::bool2Str(d->includeSubscribed));
@@ -165,7 +165,7 @@ void ChangeFetchJob::start()
         }
         url.setQuery(query);
     } else {
-        url = DriveService::fetchChangeUrl(d->changeId);
+        url = OneDriveService::fetchChangeUrl(d->changeId);
     }
 
     const QNetworkRequest request = d->createRequest(url);
