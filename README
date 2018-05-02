@@ -16,7 +16,7 @@ Deprecated APIs:
   - Latitude API v1 (https://developers.google.com/latitude/v1/)
 
 Currently supported Microsoft APIs:
-  - OneDrive Graph API v1.0 (https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/onedrive)
+  - OneDrive Graph API v1.0 (https://docs.microsoft.com/en-us/onedrive/developer/rest-api/index)
 
 Compiling:
 ----------

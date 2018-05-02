@@ -23,7 +23,7 @@ Deprecated Google APIs:
 </ul>
 LibKGAPI currently supports the following Microsoft APIs:
 <ul>
-  <li>OneDrive Graph API v1.0 (https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/onedrive)</li>
+  <li>OneDrive Graph API v1.0 (https://docs.microsoft.com/en-us/onedrive/developer/rest-api/index)</li>
 </ul>
 
 <h1>Examples</h1>
