@@ -118,8 +118,8 @@ void Job::Private::_k_replyReceived(QNetworkReply* reply)
         case KGAPI2::NoContent:    /** << OK status (removed task using Tasks API) */
             break;
 
-        case KGAPI2::TemporarilyMoved: {  /** << Temporarily moved - Google provides a new URL where to send the request */
-            qCDebug(KGAPIDebug) << "Google says: Temporarily moved to " << reply->header(QNetworkRequest::LocationHeader).toUrl();
+        case KGAPI2::TemporarilyMoved: {  /** << Temporarily moved - Google or Microsoft provides a new URL where to send the request */
+            qCDebug(KGAPIDebug) << "Google or Microsoft says: Temporarily moved to " << reply->header(QNetworkRequest::LocationHeader).toUrl();
             QNetworkRequest request = currentRequest.request;
             request.setUrl(reply->header(QNetworkRequest::LocationHeader).toUrl());
             q->enqueueRequest(request, currentRequest.rawData, currentRequest.contentType);
@@ -127,7 +127,7 @@ void Job::Private::_k_replyReceived(QNetworkReply* reply)
         }
 
         case KGAPI2::BadRequest: /** << Bad request - malformed data, API changed, something went wrong... */
-            qCWarning(KGAPIDebug) << "Bad request, Google replied '" << rawData << "'";
+            qCWarning(KGAPIDebug) << "Bad request, Google or Microsoft replied '" << rawData << "'";
             q->setError(KGAPI2::BadRequest);
             q->setErrorString(tr("Bad request."));
             q->emitFinished();
@@ -145,7 +145,7 @@ void Job::Private::_k_replyReceived(QNetworkReply* reply)
             qCDebug(KGAPIRaw) << rawData;
             const QString msg = parseErrorMessage(rawData);
             q->setError(KGAPI2::Forbidden);
-            q->setErrorString(tr("Requested resource is forbidden.\n\nGoogle replied '%1'").arg(msg));
+            q->setErrorString(tr("Requested resource is forbidden.\n\nGoogle or Microsoft replied '%1'").arg(msg));
             q->emitFinished();
             return;
         }
@@ -155,7 +155,7 @@ void Job::Private::_k_replyReceived(QNetworkReply* reply)
             qCDebug(KGAPIRaw) << rawData;
             const QString msg = parseErrorMessage(rawData);
             q->setError(KGAPI2::NotFound);
-            q->setErrorString(tr("Requested resource does not exist.\n\nGoogle replied '%1'").arg(msg));
+            q->setErrorString(tr("Requested resource does not exist.\n\nGoogle or Microsoft replied '%1'").arg(msg));
             // don't emit finished() here, we can get 404 when fetching contact photos or so,
             // in that case 404 is not fatal. Let subclass decide whether to terminate or not.
             q->handleReply(reply, rawData);
@@ -171,7 +171,7 @@ void Job::Private::_k_replyReceived(QNetworkReply* reply)
             qCDebug(KGAPIRaw) << rawData;
             const QString msg = parseErrorMessage(rawData);
             q->setError(KGAPI2::Conflict);
-            q->setErrorString(tr("Conflict. Remote resource is newer than local.\n\nGoogle replied '%1'").arg(msg));
+            q->setErrorString(tr("Conflict. Remote resource is newer than local.\n\nGoogle or Microsoft replied '%1'").arg(msg));
             q->emitFinished();
             return;
         }
@@ -181,7 +181,7 @@ void Job::Private::_k_replyReceived(QNetworkReply* reply)
             qCDebug(KGAPIRaw) << rawData;
             const QString msg = parseErrorMessage(rawData);
             q->setError(KGAPI2::Gone);
-            q->setErrorString(tr("Requested resource does not exist anymore.\n\nGoogle replied '%1'").arg(msg));
+            q->setErrorString(tr("Requested resource does not exist anymore.\n\nGoogle or Microsoft replied '%1'").arg(msg));
             q->emitFinished();
             return;
         }
@@ -191,7 +191,7 @@ void Job::Private::_k_replyReceived(QNetworkReply* reply)
             qCDebug(KGAPIRaw) << rawData;
             const QString msg = parseErrorMessage(rawData);
             q->setError(KGAPI2::InternalError);
-            q->setErrorString(tr("Internal server error. Try again later.\n\nGoogle replied '%1'").arg(msg));
+            q->setErrorString(tr("Internal server error. Try again later.\n\nGoogle or Microsoft replied '%1'").arg(msg));
             q->emitFinished();
             return;
         }
@@ -209,7 +209,7 @@ void Job::Private::_k_replyReceived(QNetworkReply* reply)
             } else if ((interval > maxTimeout) && (maxTimeout > 0)) {
                 const QString msg = parseErrorMessage(rawData);
                 q->setError(KGAPI2::QuotaExceeded);
-                q->setErrorString(tr("Maximum quota exceeded. Try again later.\n\nGoogle replied '%1'").arg(msg));
+                q->setErrorString(tr("Maximum quota exceeded. Try again later.\n\nGoogle or Microsoft replied '%1'").arg(msg));
                 q->emitFinished();
                 return;
             } else {
@@ -231,7 +231,7 @@ void Job::Private::_k_replyReceived(QNetworkReply* reply)
             qCDebug(KGAPIRaw) << rawData;
             const QString msg = parseErrorMessage(rawData);
             q->setError(KGAPI2::UnknownError);
-            q->setErrorString(tr("Unknown error.\n\nGoogle replied '%1'").arg(msg));
+            q->setErrorString(tr("Unknown error.\n\nGoogle or Microsoft replied '%1'").arg(msg));
             q->emitFinished();
             return;
         }
